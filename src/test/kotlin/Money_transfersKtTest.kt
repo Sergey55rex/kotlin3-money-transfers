@@ -76,7 +76,7 @@ class Money_transfersKtTest{
                 previousTransfers = previous,
                 transferAmount = transfer
         )
-        val expected =  75000
+        val expected =  7500
 
         assertEquals(expected, result)
     }
