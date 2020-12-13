@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>money transfers.kt</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">money transfers</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">money transfers.kt</span></div><h1>money transfers.kt</h1><pre class="source lang-java linenums">fun main() {
+<span class="nc" id="L2">    val transferAmount = 11000000</span>
+<span class="nc" id="L3">    val previousTransfers = 0</span>
+<span class="nc" id="L4">    val cardType = &quot;MasterCard&quot;</span>
+
+<span class="nc" id="L6">    val result = feeAmount (cardType, transferAmount, previousTransfers)</span>
+
+
+<span class="nc" id="L9">}</span>
+
+fun feeAmount(cardType: String, transferAmount: Int, previousTransfers: Int): Int {
+<span class="fc bfc" id="L12" title="All 5 branches covered.">    val sum= when (cardType) {</span>
+<span class="pc bpc" id="L13" title="2 of 6 branches missed.">        &quot;MasterCard&quot;, &quot;Maestro&quot; -&gt; if (transferAmount &lt; 7500000) 0 else (0.6 * transferAmount / 100 + 2000).toInt()</span>
+<span class="pc bpc" id="L14" title="2 of 4 branches missed.">        &quot;Visa&quot;, &quot;РњРёСЂ&quot; -&gt; (0.75 * transferAmount / 100).toInt()</span>
+<span class="fc" id="L15">        else -&gt; 0</span>
+    }
+    
+<span class="fc bfc" id="L18" title="All 2 branches covered.">    val limitDay =  if (&quot;Vk Pay&quot; == cardType)  1500000 else 15000000</span>
+<span class="fc bfc" id="L19" title="All 2 branches covered.">    val limitMonth = if (&quot;Vk Pay&quot; == cardType)  4000000 else 60000000</span>
+<span class="fc bfc" id="L20" title="All 4 branches covered.">    if (previousTransfers &gt; limitMonth || transferAmount &gt; limitDay) println(&quot;РџСЂРµРІС‹С€РµРЅ Р»РёРјРёС‚. РўСЂР°РЅР·Р°РєС†РёСЏ РЅРµРІРѕР·РјРѕР¶РЅР°&quot;) else println(&quot;РљРѕРјРјРёСЃСЃРёСЏ Р·Р° РїРµСЂРµРІРѕРґ РґРµРЅРµР¶РЅС‹С… СЃСЂРµРґСЃС‚РІ СЃРѕСЃС‚Р°РІРёС‚: $sum РєРѕРїРµРµРє&quot;)</span>
+<span class="fc" id="L21">    val previousTransfers =+ transferAmount</span>
+<span class="fc" id="L22">     return sum</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

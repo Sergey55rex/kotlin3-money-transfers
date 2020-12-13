@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Money_transfersKtTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-13T14:27:04" hostname="USER-PC" time="0.012">
+  <properties/>
+  <testcase name="feeAmountMir" classname="Money_transfersKtTest" time="0.008"/>
+  <testcase name="feeAmountMaestro" classname="Money_transfersKtTest" time="0.0"/>
+  <testcase name="feeAmountVisa" classname="Money_transfersKtTest" time="0.0"/>
+  <testcase name="feeAmountMaster" classname="Money_transfersKtTest" time="0.001"/>
+  <testcase name="feeAmountVkPay" classname="Money_transfersKtTest" time="0.001"/>
+  <system-out><![CDATA[Превышен лимит. Транзакция невозможна
+Коммиссия за перевод денежных средств составит: 0 копеек
+Коммиссия за перевод денежных средств составит: 8250 копеек
+Коммиссия за перевод денежных средств составит: 68000 копеек
+Превышен лимит. Транзакция невозможна
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
